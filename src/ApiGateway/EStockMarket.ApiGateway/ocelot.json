@@ -1,0 +1,100 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7226
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/company",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7099
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/company/getall",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/company/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7099
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/company/info/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/company/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7099
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/company/delete/{id}",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/company",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7099
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/company/register",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/stock",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7111
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/stock/add",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/stock/{companyId}/{startDate}/{endDate}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7111
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/stock/get/{companyId}/{startDate}/{endDate}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/stock/kpis/{companyId}/{startDate}/{endDate}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7111
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/market/stock/kpis/{companyId}/{startDate}/{endDate}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+}
